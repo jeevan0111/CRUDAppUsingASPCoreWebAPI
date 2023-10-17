@@ -1,0 +1,63 @@
+@model CRUDAppUsingASPCoreWebAPI.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.studentName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.studentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.studentGender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.studentGender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.standard)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.standard)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fatherName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fatherName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,60 @@
+@model CRUDAppUsingASPCoreWebAPI.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.studentName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.studentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.studentGender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.studentGender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.standard)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.standard)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fatherName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fatherName)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    @Html.ActionLink("Edit","Edit",new  { id=Model.id }) |
+    <a asp-action="Index">Back to List</a>
+</p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
